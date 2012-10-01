@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.1//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_1.dtd">
+
+<module name="Checker">
+  <!-- set default severity level for all checks -->
+  <property name="severity" value="warning"/>
+
+  <module name="JavadocPackage">
+      <property name="severity" value="info"/>
+  </module>
+
+  <module name="Translation">
+      <property name="severity" value="info"/>
+  </module>
+
+
+    <!-- Header -->
+
+   <module name="RegexpHeader">
+     <property name="severity" value="info"/>
+     <property name="header" value="^.*$\n^// COPYRIGHT Ericsson .* \d\d\d\d.*$\n^// All rights reserved"/>
+   </module>
+    
+  
+    <module name="FileTabCharacter">
+        <property name="severity" value="info"/>
+    </module>  
+
+  <module name="FileLength">
+        <property name="severity" value="info"/>
+  </module>
+
+    
+  <module name="TreeWalker">
+    <!-- The following checks are defined by the eclipseRD team -->
+    <!-- See http://checkstyle.sourceforge.net/availablechecks.html -->
+
+
+    <!-- Javadoc -->
+    <module name="JavadocType">
+      <property name="scope" value="protected"/>
+    </module>
+    <!-- Changes for BASIC TEST: scope public, allowMissing* added
+    -->
+    <module name="JavadocMethod">
+      <property name="scope" value="public"/>
+      <property name="allowMissingThrowsTags" value="true"/>
+      <property name="allowMissingParamTags" value="true"/>
+      <property name="allowMissingReturnTag" value="true"/>
+    </module>
+  
+    <module name="JavadocVariable">
+      <property name="scope" value="protected"/>
+    </module>
+
+    <module name="JavadocStyle">
+        <property name="scope" value="protected"/>
+        <property name="checkEmptyJavadoc" value="true"/>
+        <property name="severity" value="info"/>
+    </module>
+
+    <!-- Naming Conventions -->
+
+    <module name="AbstractClassName">
+        <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+    </module>
+
+    <module name="ConstantName">
+        <property name="format" value="^(([A-Z][A-Z0-9]*(_[A-Z0-9]+)*)|serialVersionUID)$"/>
+    </module>
+
+    <module name="LocalFinalVariableName"/>
+
+    <module name="LocalVariableName"/>
+
+    <module name="MemberName"/>
+
+    <module name="MethodName"/>
+
+    <module name="PackageName"/>
+
+    <module name="ParameterName"/>
+
+    <module name="StaticVariableName">
+      <property name="format" value="^their[A-Z][a-zA-Z0-9]*$"/>
+    </module>
+
+    <module name="TypeName"/>
+
+
+    <!-- Imports -->
+    <module name="AvoidStarImport"/> 
+    <module name="IllegalImport"/> 
+    <module name="RedundantImport"/> 
+    <!-- UnusedImport intentionally left out --> 
+    <!-- ImportOrder intentionally left out -->
+    <!-- ImportControl to be considered -->
+
+
+    <!-- Size Violations -->
+    <module name="ExecutableStatementCount">
+        <property name="severity" value="info"/>
+    </module>
+    <module name="LineLength">
+      <property name="ignorePattern" value="^((package)|(import))"/>
+      <property name="max" value="120"/>
+      <property name="severity" value="info"/>
+      <property name="tabWidth" value="4"/>
+    </module>
+
+    <module name="MethodLength">
+      <property name="countEmpty" value="false"/>
+      <property name="severity" value="info"/>
+    </module>
+    
+    <module name="AnonInnerLength">
+        <property name="max" value="30"/> <!-- Allowing for tracing etc, one screen full seems acceptable -->
+    </module>
+
+    <module name="ParameterNumber">
+      <property name="severity" value="info"/>
+    </module>
+
+    <!-- Whitespace -->
+   
+    <module name="EmptyForInitializerPad"> 
+      <property name="severity" value="info"/>
+    </module>
+    <module name="EmptyForIteratorPad">
+      <property name="severity" value="info"/>
+    </module>
+    <module name="MethodParamPad">
+      <property name="severity" value="info"/>
+    </module>
+
+    <module name="NoWhitespaceAfter">
+      <property name="severity" value="info"/>
+    </module>
+
+    <module name="whitespace.NoWhitespaceBeforeCheck">
+      <property name="allowLineBreaks" value="true"/>
+      <property name="severity" value="info"/>
+    </module>
+
+    <module name="OperatorWrap">
+        <property name="option" value="nl"/>
+      <property name="severity" value="info"/>
+    </module>
+
+
+    <module name="ParenPad">
+      <property name="severity" value="info"/>
+    </module>
+
+    <module name="TypecastParenPad">
+      <property name="severity" value="info"/>
+    </module>
+
+
+    <module name="WhitespaceAfter">
+      <property name="severity" value="info"/>
+    </module>
+
+    <module name="WhitespaceAround">
+      <!-- reda 23-feb-2007: disabled GENERIC_START, GENERIC_END for java 1.5 templates -->
+      <property name="tokens" value="ASSIGN, BAND, BAND_ASSIGN, BOR, BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON, DIV, DIV_ASSIGN, EQUAL, GE, GT, LAND, LCURLY, LE, LITERAL_ASSERT, LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_RETURN, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, LOR, LT, MINUS, MINUS_ASSIGN, MOD, MOD_ASSIGN, NOT_EQUAL, PLUS, PLUS_ASSIGN, QUESTION, RCURLY, SL, SLIST, SL_ASSIGN, SR, SR_ASSIGN, STAR, STAR_ASSIGN, TYPE_EXTENSION_AND, WILDCARD_TYPE"/>
+      <property name="severity" value="info"/>
+    </module>
+
+    <!-- Modifiers -->
+    <module name="ModifierOrderCheck">
+      <property name="severity" value="info"/>
+    </module>
+
+    <module name="RedundantModifierCheck">
+      <property name="severity" value="info"/>
+    </module>
+
+    <!-- Block checks -->
+
+    <module name="EmptyBlock">
+        <property name="option" value="text"/>
+    </module>
+    
+    <module name="LeftCurly">
+      <property name="option" value="eol"/>
+      <property name="severity" value="info"/>
+    </module>
+
+    <module name="NeedBraces"/>
+
+    <module name="RightCurly">
+        <property name="option" value="same"/>
+        <property name="severity" value="info"/>
+    </module>
+
+    <!-- AvoidnestedBlocks intentionally left out -->
+
+    <!-- Coding -->
+
+    <!-- ArrayTrailingComma intentionally left out -->
+
+    <!-- AvoidInlineConditionals intentionally left out -->
+    
+    <module name="CovariantEquals"/>
+
+    <module name="DoubleCheckedLocking"/>
+
+    <module name="EmptyStatement"/>
+
+    <module name="EqualsHashCode"/>
+
+    <!-- FinalLocalVariable intentionally left out -->
+
+    <module name="HiddenField"/>
+
+    <module name="IllegalInstantiation"/>
+
+    <!-- IllegalToken(Text) intentionally left out --> 
+
+    <module name="InnerAssignment"/>
+    
+    <!-- removed for BASIC TEST
+    <module name="MagicNumber"/>
+    -->
+
+    <module name="MissingSwitchDefault"/>
+
+    <module name="ModifiedControlVariable"/>
+
+    <!-- RedundantThrows intentionally left out -->
+
+    <module name="SimplifyBooleanExpression">
+      <property name="severity" value="info"/>
+  </module>
+
+    <module name="SimplifyBooleanReturn"/>
+
+    <module name="StringLiteralEquality"/>
+
+    <module name="NestedIfDepth">
+        <property name="max" value="3"/> <!-- Allow nested tracing -->
+    </module>
+
+    <module name="NestedTryDepth">
+        <property name="max" value="2"/>
+    </module>
+
+    <module name="SuperClone"/>
+
+    <module name="SuperFinalize"/>
+
+    <module name="IllegalCatch">
+        <property name="illegalClassNames" value="java.lang.Throwable, java.lang.Error"/>
+    </module>
+
+    <!-- Currently produces an Error in checklipse 
+    <module name="IllegalThrows">
+        <property name="illegalClassNames" value="java.lang.Throwable, java.lang.Error"/>
+    </module>
+    -->
+
+    <module name="PackageDeclaration"/>
+
+    <!-- JUnitTestCase to be considered -->
+
+    <!-- ReturnCount intentionally left out -->
+
+    <!-- IllegalType intentionally left out -->
+    
+    <!-- DeclarationOrder to be considered -->
+
+    <module name="ParameterAssignment"/>
+
+    <module name="ExplicitInitialization">
+      <property name="severity" value="info"/>
+    </module>
+
+    <module name="DefaultComesLast"/>
+
+    <!-- Removed for BASIC TEST
+    <module name="MissingCtor"/>
+    -->
+
+    <module name="FallThrough"/>
+
+    <!--
+    <module name="MultipleStringLiterals">
+      <property name="severity" value="info"/>
+    </module>
+    -->
+
+    <module name="MultipleVariableDeclarations"/>
+
+    <!-- RequireThis intentionally left out -->
+
+    <!-- UnnecessaryParentheses intentionally left out -->
+
+    <!-- Class Design -->
+
+    <module name="VisibilityModifier"/>
+
+    <module name="FinalClass">
+      <property name="severity" value="info"/>
+    </module>
+
+    <module name="InterfaceIsType"/>
+
+    <module name="HideUtilityClassConstructor"/>
+
+    <!-- DesignForExtension intentionally left out -->
+
+    <!-- MutableException intentionally left out -->
+
+    <!-- ThrowsCount intentionally left out -->
+
+    <!-- Metrics -->
+   
+    <module name="BooleanExpressionComplexity"/> 
+
+    <!-- ClassDataAbstractionCoupling to be considered -->
+
+    <!-- ClassFanOutComplexity to be considered -->
+
+    <!-- CyclomaticComplexity intentionally left out -->
+    
+    <module name="NPathComplexity"/>
+    
+    <!-- JavaNCSS intentionally left out -->
+
+    <!-- Miscellaneous -->
+
+    <!-- GenericIllegalRegexp intentionally left out -->
+
+    <!-- NewlineAtEndOfFile intentionally left out -->
+
+    <module name="TodoCommentCheck">
+        <property name="format" value="(TODO:|XXX:|FIXME:)"/>
+    </module>
+
+
+    <!-- UncommentedMain intentionally left out -->
+    
+    <module name="UpperEll"/>
+
+    <module name="ArrayTypeStyle">
+      <property name="javaStyle" value="true"/>
+      <property name="severity" value="info"/>
+    </module>
+     
+    <!-- FinalParameters intentionally left out -->
+
+    <!-- DescendantToken intentionally left out -->
+    
+    <!-- Indentation intentionally left out -->
+
+    <!-- TrailingComment intentionally left out -->
+
+    <!-- RequiredRegexp intentionally left out -->
+
+    <!-- Regexp intentionally left out -->
+
+  </module>
+</module>

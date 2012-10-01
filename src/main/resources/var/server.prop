@@ -1,0 +1,4 @@
+#Jan 10 18:54:40 MYT 2010
+timeout=5000
+poolsize=25
+root=/var/www
